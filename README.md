@@ -1,5 +1,6 @@
 # TP 01 - Landing page Novis
 
+## Lien de la page github : https://parlegentil.github.io/TP01-LandingPageNovis/
 
 
 ### Expliquez ce qu’est le Layout Shift.
@@ -14,4 +15,5 @@ C'est un text qui n'est pas visible directement, mais est utile dans un cas d\'a
 
 ### On utilise souvent loading="lazy” expliquez son utilité.
 Le lazy loading permet de retarder le chargement de certains éléments pour améliorer les performances et la vitesse de chargement de la page web.
+
 
