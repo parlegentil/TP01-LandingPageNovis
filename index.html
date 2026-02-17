@@ -1,32 +1,198 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Novis | Landing page</title>
+  <link rel="stylesheet" href="css/main.css">
   <meta name="description" content="">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+  <link rel="icon" href="asset/img/N.png" sizes="any">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <script>
+    tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // palette indigo moderne, sobre et contrastée
+            brand: {
+              50: '#f8fafc',
+              100: '#eef2ff',
+              500: '#6366f1',
+              700: '#4f46e5'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <style>
+
+  </style>
 </head>
 
-<body>
+<body class="antialiased bg-gradient-to-b from-slate-900 via-slate-800 to-indigo-900 text-slate-100">
+  <header class="fixed inset-x-0 top-0 z-20">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between backdrop-blur-sm bg-black/20 rounded-b-2xl">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="asset/img/N-blanc.png" alt="Novis-icon" class="h-8 w-8 rounded" width="32" height="32" loading="eager">
+        <span class="font-semibold text-white">Novis</span>
+      </a>
+      <nav role="navigation" aria-label="Navigation principale" class="hidden md:flex items-center gap-6 text-sm text-slate-200">
+        <a href="#details" class="hover:text-white">Features</a>
+        <a href="#" class="hover:text-white">Pricing</a>
+        <a href="#" class="hover:text-white">Contact</a>
+      </nav>
+      <div class="md:hidden text-slate-200">☰</div>
+    </div>
+  </header>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+  <main class="pt-20">
+    <section id="home" class="min-h-[80vh] flex items-center">
+      <div class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div id="Title" class="md:col-span-2 flex flex-col items-start justify-center text-left px-2 py-8">
+          <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-white drop-shadow-lg hero-title">NOVIS</h1>
+          <p class="mt-4 text-lg md:text-xl text-slate-200 max-w-xl">Nous concevons des expériences numériques rapides, élégantes et centrées utilisateur — design minimal, performances maximales.</p>
+          <div class="mt-6 flex gap-4">
+            <a class="inline-block bg-brand-500 hover:bg-brand-700 focus:ring-4 focus:ring-brand-500/30 text-white font-semibold px-5 py-3 rounded-lg shadow-md transition-transform transform hover:-translate-y-0.5" href="#details" aria-label="Découvrir la section détails">Découvrir</a>
+            <a class="inline-block border border-white/20 text-white/90 px-5 py-3 rounded-lg hover:bg-white/5 transition-colors" href="#" aria-label="Essayer Novis">Essayer</a>
+          </div>
+        </div>
+        <div class="hidden md:block md:col-span-1">
+          <!-- Illustration minimale — remplacer par image si souhaité -->
+          <div class="w-full h-64 rounded-2xl bg-gradient-to-tr from-brand-500 to-indigo-500 shadow-2xl flex items-center justify-center">
+            <img src="asset/img/N-blanc.png" alt="illustration" class="w-28 opacity-90 grayscale-0" width="112" height="112" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="mt-12 mb-16">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 card">
+          <h2 class="text-center text-2xl md:text-3xl font-semibold text-white mb-8">Un fonctionnement au meilleur de l'innovation</h2>
+
+          <div class="flex flex-col md:flex-row gap-6 justify-center items-stretch">
+            <div class="flex-1 bg-white/6 border border-white/6 rounded-lg p-6 text-center">
+              <div class="text-brand-500 text-3xl mb-3">SPARCK LOGO</div>
+              <h3 class="font-semibold text-white mb-2">Rapidité</h3>
+              <p class="text-slate-200">Performances optimisées pour le web moderne.</p>
+            </div>
+
+            <div class="flex-1 bg-white/6 border border-white/6 rounded-lg p-6 text-center">
+              <div class="text-brand-500 text-3xl mb-3">LOCK LOGO</div>
+              <h3 class="font-semibold text-white mb-2">Sécurité</h3>
+              <p class="text-slate-200">Bonnes pratiques et confidentialité intégrée.</p>
+            </div>
+
+            <div class="flex-1 bg-white/6 border border-white/6 rounded-lg p-6 text-center">
+              <div class="text-brand-500 text-3xl mb-3">STARS LOGO</div>
+              <h3 class="font-semibold text-white mb-2">Design</h3>
+              <p class="text-slate-200">Interface épurée et expérience cohérente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard preview (sémantique, accessible) -->
+    <section id="dashboard" class="mt-8 mb-12" aria-label="Aperçu du tableau de bord Novis">
+      <div class="container" id="dashboard-grid">
+        <article class="card total" aria-labelledby="total-balance">
+          <h3 id="total-balance" class="text-lg text-slate-200">Solde total</h3>
+          <div class="mt-4">
+            <p class="text-3xl font-semibold text-white">€ 124,560.32</p>
+            <p class="lead mt-1">Croissance 30 jours • <span class="text-positive">+4.8%</span></p>
+          </div>
+
+          <div class="mt-6">
+            <div class="card p-4">
+              <h4 class="text-sm text-slate-200">Répartition par type d'actif</h4>
+              <div class="mt-3 pie" role="img" aria-label="Répartition des actifs"></div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="chart card" aria-label="Graphique de performance">
+          <h4 class="text-sm text-slate-200">Performance</h4>
+          <div class="mt-4">
+            <!-- mini graphique en pur CSS placeholder -->
+            <div style="height:220px; border-radius:12px; background: linear-gradient(180deg, rgba(99,102,241,0.18), rgba(79,70,229,0.06)); display:flex; align-items:end; gap:6px; padding:12px;">
+              <div style="width:8%; height:30%; background:linear-gradient(180deg,#6366f1,#4f46e5); border-radius:6px"></div>
+              <div style="width:8%; height:58%; background:linear-gradient(180deg,#06b6d4,#0ea5a4); border-radius:6px"></div>
+              <div style="width:8%; height:42%; background:linear-gradient(180deg,#fde68a,#f59e0b); border-radius:6px"></div>
+              <div style="width:8%; height:70%; background:linear-gradient(180deg,#34d399,#10b981); border-radius:6px"></div>
+              <div style="width:8%; height:50%; background:linear-gradient(180deg,#60a5fa,#3b82f6); border-radius:6px"></div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="transactions card" aria-labelledby="recent-transactions">
+          <h4 id="recent-transactions" class="text-sm text-slate-200">Dernières transactions</h4>
+          <div class="mt-4 overflow-x-auto">
+            <table class="table" role="table" aria-describedby="recent-transactions">
+              <thead>
+                <tr>
+                  <th scope="col">Actif</th>
+                  <th scope="col">Quantité</th>
+                  <th scope="col">Prix</th>
+                  <th scope="col">Variation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row-hover">
+                  <td>Bitcoin (BTC)</td>
+                  <td>0.42</td>
+                  <td>€ 29,400</td>
+                  <td class="text-positive">+3.2%</td>
+                </tr>
+                <tr class="row-hover">
+                  <td>Apple (AAPL)</td>
+                  <td>12</td>
+                  <td>€ 165</td>
+                  <td class="text-negative">-1.1%</td>
+                </tr>
+                <tr class="row-hover">
+                  <td>Microsoft (MSFT)</td>
+                  <td>4</td>
+                  <td>€ 315</td>
+                  <td class="text-positive">+0.8%</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total</td>
+                  <td></td>
+                  <td></td>
+                  <td>—</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/6 py-8">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-300">
+      <div class="mb-4 md:mb-0">© 2026 Novis</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 

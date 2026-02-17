@@ -1,0 +1,30 @@
+header {
+  position: relative;
+}
+
+header .container {
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+nav a {
+  color: var(--muted);
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+}
+
+nav a:hover, nav a:focus {
+  color: var(--text-main);
+  background: rgba(255,255,255,0.03);
+}
+
+@media (max-width: 767px) {
+  nav { display: none; }
+}
+

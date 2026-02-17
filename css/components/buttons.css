@@ -1,0 +1,26 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem; border-radius: var(--border-radius);
+  padding: .6rem 1rem;
+  cursor: pointer;
+}
+
+
+.btn-primary {
+  background: var(--accent-color);
+  color: white;
+  box-shadow: 0 6px 18px rgba(99,102,241,0.12);
+}
+
+
+.btn-primary:hover { background: var(--accent-700);
+  transform: translateY(-2px);
+}
+
+.btn-ghost { background: transparent;
+  color: var(--text-main);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+

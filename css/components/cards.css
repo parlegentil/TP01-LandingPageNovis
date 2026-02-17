@@ -1,0 +1,16 @@
+.card { border-radius: var(--border-radius);
+  padding: 1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.card h3 {
+  margin: 0 0 .5rem 0;
+  color: var(--text-main);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
