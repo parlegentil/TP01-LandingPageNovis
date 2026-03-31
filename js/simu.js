@@ -1,6 +1,7 @@
 function initSimulatorForm() {
     const formEl = document.getElementById('simuForm');
     const messageEl = document.getElementById('simuMessage');
+    const chartSectionEl = document.getElementById('simulator-chart');
     const resultEl = document.getElementById('simuResult');
     const resultFinalCapitalEl = document.getElementById('resultFinalCapital');
     const resultTotalInterestEl = document.getElementById('resultTotalInterest');
@@ -35,6 +36,15 @@ function initSimulatorForm() {
         resultEl.classList.add('hidden');
     }
 
+    function hideChartSection() {
+        if (!chartSectionEl) {
+            return;
+        }
+
+        chartSectionEl.classList.add('hidden');
+        chartSectionEl.setAttribute('aria-hidden', 'true');
+    }
+
     function showResult(finalCapital, totalInterest, totalContribution) {
         if (!resultEl || !resultFinalCapitalEl || !resultTotalInterestEl || !resultTotalContributionEl) {
             return;
@@ -45,6 +55,9 @@ function initSimulatorForm() {
         resultTotalContributionEl.textContent = 'Total des versements : ' + currencyFormatter.format(totalContribution);
         resultEl.classList.remove('hidden');
     }
+
+    // Etat initial: pas de graphique tant qu'aucun calcul valide n'a ete lance.
+    hideChartSection();
 
     function parseNumber(value) {
         const parsed = Number(value);
@@ -142,6 +155,7 @@ function initSimulatorForm() {
             if (error) {
                 inputEl.value = '';
                 hideResult();
+                hideChartSection();
                 showError(error);
                 return;
             }
@@ -160,6 +174,7 @@ function initSimulatorForm() {
 
             if (!value) {
                 hideResult();
+                hideChartSection();
                 showError('Tous les champs sont obligatoires.');
                 return;
             }
@@ -167,6 +182,7 @@ function initSimulatorForm() {
             const error = validateField(fieldId, value);
             if (error) {
                 hideResult();
+                hideChartSection();
                 showError(error);
                 return;
             }
@@ -289,6 +305,16 @@ function ensureSimulatorChart() {
 }
 
 function updateChartWithProjection(chartData) {
+    const chartSectionEl = document.getElementById('simulator-chart');
+
+    if (!chartData || !Array.isArray(chartData.labels) || chartData.labels.length === 0) {
+        if (chartSectionEl) {
+            chartSectionEl.classList.add('hidden');
+            chartSectionEl.setAttribute('aria-hidden', 'true');
+        }
+        return;
+    }
+
     const chart = ensureSimulatorChart();
     if (!chart) {
         return;
@@ -299,11 +325,15 @@ function updateChartWithProjection(chartData) {
     chart.data.datasets[1].data = chartData.dataVersements;
     chart.data.datasets[2].data = chartData.dataInterets;
     chart.update();
+
+    if (chartSectionEl) {
+        chartSectionEl.classList.remove('hidden');
+        chartSectionEl.setAttribute('aria-hidden', 'false');
+    }
 }
 
 function bootstrapSimulator() {
     initSimulatorForm();
-    ensureSimulatorChart();
 }
 
 if (document.readyState === 'loading') {
